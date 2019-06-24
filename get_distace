@@ -1,0 +1,9 @@
+def getDistance(lat1, lng1, lat2, lng2):
+    EARTH_REDIUS = 6378.137
+    radLat1 = radians(lat1)
+    radLat2 = radians(lat2)
+    a = radLat1 - radLat2
+    b = radians(lng1) - radians(lng2)
+    s = 2 * asin(sqrt(pow(sin(a/2), 2) + cos(radLat1) * cos(radLat2) * pow(sin(b/2), 2))) #km
+    s = s * EARTH_REDIUS
+    return s
